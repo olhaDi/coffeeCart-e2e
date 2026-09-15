@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-test('test', async ({ page }) => {
+test('Empty cart displays no products', async ({ page }) => {
   await page.goto('https://coffee-cart.app/');
   await page.locator('[data-test="checkout"]').click();
   await page.getByRole('textbox', { name: 'Name' }).fill('olia');
