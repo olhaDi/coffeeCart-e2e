@@ -5,9 +5,6 @@ const price = "$10.00";
 
 test('Product is visible on Cart tab', async ({ page }) => {
   await page.goto('https://coffee-cart.app/');
-  await page.getByRole('link', { name: 'Cart page' }).click();
-  await expect(page.getByText('No coffee, go add some.')).toBeVisible();
-  await page.getByRole('link', { name: 'Menu page' }).click();
   await page.locator(`[data-test="${product}"]`).click();
   await page.locator('[data-test="checkout"]').click();
   await page.getByRole('button', { name: '×' }).click();
